@@ -157,7 +157,7 @@
                                     </div>
                                     <div class="form-group col-xs-6">
                                         <label for="country" class="sr-only"></label>
-                                        <select name="country" class="form-control" id="country">
+                                        <select name="country" class="form-control" id="country" >
                                             <option value="country" disabled selected>Country</option>
                                             <option value="AFG">Afghanistan</option>
                                             <option value="ALA">Aland Islands</option>

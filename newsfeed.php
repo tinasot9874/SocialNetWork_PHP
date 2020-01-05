@@ -1,118 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-	
-<!-- Mirrored from mythemestore.com/friend-finder/newsfeed.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2020 13:48:17 GMT -->
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="This is social network html5 template available in themeforest......" />
-		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
-		<meta name="robots" content="index, follow" />
-		<title>News Feed | Check what your friends are doing</title>
-
-    <!-- Stylesheets
-    ================================================= -->
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/ionicons.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link href="css/emoji.css" rel="stylesheet">
-    
-    <!--Google Font-->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
-    
-    <!--Favicon-->
-    <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
-	</head>
-  <body>
-
-    <!-- Header
-    ================================================= -->
-		<header id="header">
-      <nav class="navbar navbar-default navbar-fixed-top menu">
-        <div class="container">
-
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index-register.html"><img src="images/logo.png" alt="logo" /></a>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right main-menu">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
-                  <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="index-2.html">Landing Page 1</a></li>
-                    <li><a href="index-register.html">Landing Page 2</a></li>
-                  </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
-                  <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="newsfeed.php">Newsfeed</a></li>
-                    <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                    <li><a href="newsfeed-friends.html">My friends</a></li>
-                    <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                    <li><a href="newsfeed-images.html">Images</a></li>
-                    <li><a href="newsfeed-videos.html">Videos</a></li>
-                  </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
-                <ul class="dropdown-menu login">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html">Timeline About</a></li>
-                  <li><a href="timeline-album.html">Timeline Album</a></li>
-                  <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                  <li><a href="edit-profile-basic.html">Edit: Basic Info</a></li>
-                  <li><a href="edit-profile-work-edu.html">Edit: Work</a></li>
-                  <li><a href="edit-profile-interests.html">Edit: Interests</a></li>
-                  <li><a href="edit-profile-settings.html">Account Settings</a></li>
-                  <li><a href="edit-profile-password.html">Change Password</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
-                <ul class="dropdown-menu page-list">
-                  <li><a href="index-2.html">Landing Page 1</a></li>
-                  <li><a href="index-register.html">Landing Page 2</a></li>
-                  <li><a href="newsfeed.php">Newsfeed</a></li>
-                  <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                  <li><a href="newsfeed-friends.html">My friends</a></li>
-                  <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                  <li><a href="newsfeed-images.html">Images</a></li>
-                  <li><a href="newsfeed-videos.html">Videos</a></li>
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html">Timeline About</a></li>
-                  <li><a href="timeline-album.html">Timeline Album</a></li>
-                  <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                  <li><a href="edit-profile-basic.html">Edit Profile</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                  <li><a href="faq.html">FAQ Page</a></li>
-                  <li><a href="404.html">404 Not Found</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="contact.html">Contact</a></li>
-            </ul>
-            <form class="navbar-form navbar-right hidden-sm">
-              <div class="form-group">
-                <i class="icon ion-android-search"></i>
-                <input type="text" class="form-control" placeholder="Search friends, photos, videos">
-              </div>
-            </form>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
-      </nav>
-    </header>
-    <!--Header End-->
-
+<?php include('includes/header.php');?>
     <div id="page-contents">
     	<div class="container">
     		<div class="row">
@@ -121,8 +7,8 @@
           ================================================= -->
     			<div class="col-md-3 static">
             <div class="profile-card">
-            	<img src="images/users/user-1.jpg" alt="user" class="profile-photo" />
-            	<h5><a href="timeline.html" class="text-white">Sarah Cruiz</a></h5>
+            	<img src="<?php echo $user['profile_pic']; ?>" alt="user" class="profile-photo" />
+            	<h5><a href="<?php echo $userLoggedIn; ?>" class="text-white"><?php echo $user['firstname'] . " " . $user['lastname']; ?></a></h5>
             	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
@@ -156,7 +42,7 @@
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
                   <div class="form-group">
-                    <img src="images/users/user-1.jpg" alt="" class="profile-photo-md" />
+                    <img src="<?php echo $user['profile_pic']; ?>" alt="" class="profile-photo-md" />
                     <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                   </div>
                 </div>
@@ -182,7 +68,7 @@
                 <img src="images/users/user-5.jpg" alt="user" class="profile-photo-md pull-left" />
                 <div class="post-detail">
                   <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">Alexis Clark</a> <span class="following">following</span></h5>
+                    <h5><a href="profile.php" class="profile-link">Alexis Clark</a> <span class="following">following</span></h5>
                     <p class="text-muted">Published a photo about 3 mins ago</p>
                   </div>
                   <div class="reaction">
@@ -196,11 +82,11 @@
                   <div class="line-divider"></div>
                   <div class="post-comment">
                     <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    <p><a href="profile.php" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-4.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                    <p><a href="profile.php" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
@@ -220,7 +106,7 @@
                 <img src="images/users/user-3.jpg" alt="user" class="profile-photo-md pull-left" />
                 <div class="post-detail">
                   <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">Sophia Lee</a> <span class="following">following</span></h5>
+                    <h5><a href="profile.php" class="profile-link">Sophia Lee</a> <span class="following">following</span></h5>
                     <p class="text-muted">Updated her status about 33 mins ago</p>
                   </div>
                   <div class="reaction">
@@ -234,15 +120,15 @@
                   <div class="line-divider"></div>
                    <div class="post-comment">
                     <img src="images/users/user-14.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Olivia </a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <i class="em em-anguished"></i> Ut enim ad minim veniam, quis nostrud </p>
+                    <p><a href="profile.php" class="profile-link">Olivia </a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <i class="em em-anguished"></i> Ut enim ad minim veniam, quis nostrud </p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Sarah</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <p><a href="profile.php" class="profile-link">Sarah</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-2.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Linda</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p><a href="profile.php" class="profile-link">Linda</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
@@ -259,7 +145,7 @@
                 <img src="images/users/user-2.jpg" alt="user" class="profile-photo-md pull-left" />
                 <div class="post-detail">
                   <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">Linda Lohan</a> <span class="following">following</span></h5>
+                    <h5><a href="profile.php" class="profile-link">Linda Lohan</a> <span class="following">following</span></h5>
                     <p class="text-muted">Published a photo about 1 hour ago</p>
                   </div>
                   <div class="reaction">
@@ -273,7 +159,7 @@
                   <div class="line-divider"></div>
                   <div class="post-comment">
                     <img src="images/users/user-12.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Cris </a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam <i class="em em-muscle"></i></p>
+                    <p><a href="profile.php" class="profile-link">Cris </a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam <i class="em em-muscle"></i></p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
@@ -291,7 +177,7 @@
                 <img src="images/users/user-4.jpg" alt="user" class="profile-photo-md pull-left" />
                 <div class="post-detail">
                   <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">John Doe</a> <span class="following">following</span></h5>
+                    <h5><a href="profile.php" class="profile-link">John Doe</a> <span class="following">following</span></h5>
                     <p class="text-muted">Published a photo about 2 hour ago</p>
                   </div>
                   <div class="reaction">
@@ -305,11 +191,11 @@
                   <div class="line-divider"></div>
                   <div class="post-comment">
                     <img src="images/users/user-13.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Brian </a>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+                    <p><a href="profile.php" class="profile-link">Brian </a>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-8.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Richard</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p><a href="profile.php" class="profile-link">Richard</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
@@ -329,7 +215,7 @@
                 <img src="images/users/user-3.jpg" alt="user" class="profile-photo-md pull-left" />
                 <div class="post-detail">
                   <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">Sophia Lee</a> <span class="following">following</span></h5>
+                    <h5><a href="profile.php" class="profile-link">Sophia Lee</a> <span class="following">following</span></h5>
                     <p class="text-muted"><i class="icon ion-ios-location"></i> Went to Niagara Falls today</p>
                   </div>
                   <div class="reaction">
@@ -343,7 +229,7 @@
                   <div class="line-divider"></div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Sarah </a>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <i class="em em-blush"></i> <i class="em em-blush"></i> </p>
+                    <p><a href="profile.php" class="profile-link">Sarah </a>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <i class="em em-blush"></i> <i class="em em-blush"></i> </p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
@@ -361,7 +247,7 @@
                 <img src="images/users/user-9.jpg" alt="user" class="profile-photo-md pull-left" />
                 <div class="post-detail">
                   <div class="user-info">
-                    <h5><a href="timeline.html" class="profile-link">Anna Young</a> <span class="following">following</span></h5>
+                    <h5><a href="profile.php" class="profile-link">Anna Young</a> <span class="following">following</span></h5>
                     <p class="text-muted">Published a photo about 4 hour ago</p>
                   </div>
                   <div class="reaction">
@@ -375,7 +261,7 @@
                   <div class="line-divider"></div>
                   <div class="post-comment">
                     <img src="images/users/user-10.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.html" class="profile-link">Julia </a>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+                    <p><a href="profile.php" class="profile-link">Julia </a>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
@@ -394,35 +280,35 @@
               <div class="follow-user">
                 <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Diana Amber</a></h5>
+                  <h5><a href="profile.php">Diana Amber</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
                 <img src="images/users/user-12.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Cris Haris</a></h5>
+                  <h5><a href="profile.php">Cris Haris</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
                 <img src="images/users/user-13.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Brian Walton</a></h5>
+                  <h5><a href="profile.php">Brian Walton</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
                 <img src="images/users/user-14.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Olivia Steward</a></h5>
+                  <h5><a href="profile.php">Olivia Steward</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>
               <div class="follow-user">
                 <img src="images/users/user-15.jpg" alt="" class="profile-photo-sm pull-left" />
                 <div>
-                  <h5><a href="timeline.html">Sophia Page</a></h5>
+                  <h5><a href="profile.php">Sophia Page</a></h5>
                   <a href="#" class="text-green">Add friend</a>
                 </div>
               </div>

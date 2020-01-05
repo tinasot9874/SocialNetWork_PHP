@@ -17,6 +17,9 @@ $error_array = array();     // Holds error messages
 if (isset($_POST['register'])){
     //Registration form value
 
+    // Username
+
+
     //First name
     $fname = strip_tags($_POST['firstname']);                //Remove html tags
     $fname = str_replace(" ", "", $fname);      //Remove blank spaces
@@ -102,9 +105,20 @@ if (isset($_POST['register'])){
 
         $pass = md5($pass);
 
+        //Generate username by fname + fname
+        $username = strtolower($fname . "_" . $lname);
+        $check_username_query = mysqli_query($conn, "SELECT username FROM users WHERE username ='$username'");
+        $i = 0;
+        // if username exits add number to username
+        while(mysqli_num_rows($check_username_query) != 0){
+            $i++;  // Add 1 to i
+            $username = $username . "_" . $i;
+            $check_username_query = mysqli_query($conn, "SELECT username FROM users WHERE username ='$username'");
+        }
+
         // Insert data to database
 
-        $query = mysqli_query($conn, "INSERT INTO users VALUES ('', '$fname', '$lname', '$email', '$pass', '$dob', '$date', '$sex', '$city', '$country', '$picture_user', '0' , '0', 'no', ',')");
+        $query = mysqli_query($conn, "INSERT INTO users VALUES ('','$username', '$fname', '$lname', '$email', '$pass', '$dob', '$date', '$sex', '$city', '$country', '$picture_user', '0' , '0', 'no', ',')");
 
         // Clear session variable after register success
         $_SESSION['fname'] = "";

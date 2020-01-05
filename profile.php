@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	
-<!-- Mirrored from mythemestore.com/friend-finder/timeline.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2020 14:24:32 GMT -->
+<!-- Mirrored from mythemestore.com/friend-finder/profile.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2020 14:24:32 GMT -->
 <head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,7 +67,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt="" /></span></a>
                 <ul class="dropdown-menu login">
-                  <li><a href="timeline.html">Timeline</a></li>
+                  <li><a href="profile.php">Timeline</a></li>
                   <li><a href="timeline-about.html">Timeline About</a></li>
                   <li><a href="timeline-album.html">Timeline Album</a></li>
                   <li><a href="timeline-friends.html">Timeline Friends</a></li>
@@ -89,7 +89,7 @@
                   <li><a href="newsfeed-messages.html">Chatroom</a></li>
                   <li><a href="newsfeed-images.html">Images</a></li>
                   <li><a href="newsfeed-videos.html">Videos</a></li>
-                  <li><a href="timeline.html">Timeline</a></li>
+                  <li><a href="profile.php">Timeline</a></li>
                   <li><a href="timeline-about.html">Timeline About</a></li>
                   <li><a href="timeline-album.html">Timeline Album</a></li>
                   <li><a href="timeline-friends.html">Timeline Friends</a></li>
@@ -132,7 +132,7 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html" class="active">Timeline</a></li>
+                  <li><a href="profile.php" class="active">Timeline</a></li>
                   <li><a href="timeline-about.html">About</a></li>
                   <li><a href="timeline-album.html">Album</a></li>
                   <li><a href="timeline-friends.html">Friends</a></li>
@@ -208,7 +208,7 @@
                   <img src="images/users/user-1.jpg" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <h5><a href="profile.php" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
                       <p class="text-muted">Published a photo about 15 mins ago</p>
                     </div>
                     <div class="reaction">
@@ -222,11 +222,11 @@
                     <div class="line-divider"></div>
                     <div class="post-comment">
                       <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                      <p><a href="profile.php" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="post-comment">
                       <img src="images/users/user-4.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                      <p><a href="profile.php" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="post-comment">
                       <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
@@ -251,7 +251,7 @@
                   <img src="images/users/user-1.jpg" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <h5><a href="profile.php" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
                       <p class="text-muted">Yesterday</p>
                     </div>
                     <div class="reaction">
@@ -265,11 +265,11 @@
                     <div class="line-divider"></div>
                     <div class="post-comment">
                       <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                      <p><a href="profile.php" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="post-comment">
                       <img src="images/users/user-4.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                      <p><a href="profile.php" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="post-comment">
                       <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
@@ -293,7 +293,7 @@
                   <img src="images/users/user-1.jpg" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <h5><a href="profile.php" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
                       <p class="text-muted">2 days ago</p>
                     </div>
                     <div class="reaction">
@@ -307,11 +307,11 @@
                     <div class="line-divider"></div>
                     <div class="post-comment">
                       <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                      <p><a href="profile.php" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="post-comment">
                       <img src="images/users/user-4.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
+                      <p><a href="profile.php" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="post-comment">
                       <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
@@ -438,5 +438,5 @@
 
   </body>
 
-<!-- Mirrored from mythemestore.com/friend-finder/timeline.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2020 14:26:24 GMT -->
+<!-- Mirrored from mythemestore.com/friend-finder/profile.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2020 14:26:24 GMT -->
 </html>
