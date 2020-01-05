@@ -1,122 +1,9 @@
 <?php
 
-    require_once ('includes/config.php');
+    require_once 'includes/config.php';
+    require_once 'includes/register.php';
+    require_once 'includes/login.php';
 
-    // Declaring variable to prevent errors
-    $fname       = "";          // First name
-    $lname       = "";          // Last name
-    $email       = "";          // Email
-    $pass        = "";          // Password
-    $cfm_pass    = "";          // Confirm Password
-    $date        = "";          // Sign up date
-    $dob         = "";          // Day of birds
-    $sex         = "";          // Sex
-    $city        = "";          // City
-    $country     = "";          // Country
-    $picture_user= "";          // Picture User
-    $error_array = array();     // Holds error messages
-
-    if (isset($_POST['register'])){
-        //Registration form value
-
-        //First name
-        $fname = strip_tags($_POST['firstname']);                //Remove html tags
-        $fname = str_replace(" ", "", $fname);      //Remove blank spaces
-        $fname = ucfirst(strtolower($fname));                   //Uppercase first name
-        $_SESSION['fname'] = $fname; // Stores first name into session variable
-        if (strlen($fname) > 25 || strlen($fname) < 2){
-            array_push($error_array,"Your First name must be between 2 and 25 characters");
-        }
-
-
-        //Last name
-        $lname = strip_tags($_POST['lastname']);                 //Remove html tags
-        $lname = str_replace(" ", "", $lname);      //Remove blank spaces
-        $lname = ucfirst(strtolower($lname));                   //Uppercase first name
-        $_SESSION['lname'] = $lname;                            // Stores last name into session variable
-        if (strlen($lname) > 25 || strlen($lname) < 2){
-            array_push($error_array,"Your Last name must be between 2 and 25 characters") ;
-        }
-
-        //Email
-        $email = strip_tags($_POST['email']);                    //Remove html tags
-        $email = str_replace(" ","", $email);      //Remove blank spaces
-        $email = ucfirst(strtolower($email));                   //Uppercase first name
-        $_SESSION['email'] = $email;                            // Stores email into session variable
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $email = filter_var($email, FILTER_VALIDATE_EMAIL);
-            $email_check = mysqli_query($conn, "SELECT email FROM users WHERE email ='$email'");
-
-            //Count the number of rows returned
-            $num_rows = mysqli_num_rows($email_check);
-            if ($num_rows > 0){
-                array_push($error_array,"Email already in use") ;
-            }
-
-        }else{
-            array_push($error_array,"Invalid Email! Please check again");
-        }
-
-        //Password
-        $pass = strip_tags($_POST['password']);                //Remove html tags
-        $cfm_pass = strip_tags($_POST['cfm_password']);        //Remove html tags
-
-        //Date
-        $date = date("Y-m-d"); // Get current date
-        $_SESSION['date'] = $date;                 // Stores date into session variable
-
-        if ($pass != $cfm_pass){
-            array_push($error_array,"Password don't match!");
-        }else{
-            if(preg_match('/[^A-Za-z0-9]/', $pass)){
-                array_push($error_array,"Your password can only contain characters and numbers");
-            }
-        }
-        if (strlen($pass) > 30 || strlen($pass) <5){
-
-            array_push($error_array,"Your password must be between 5 and 30 characters");
-        }
-
-        // City
-        $city  = strip_tags($_POST['city']);
-        $_SESSION['city'] = $city;
-
-        //Country
-        $country = $_POST['country'];
-        // Sex
-        $sex   = $_POST['sex'];
-        $_SESSION['sex'] = $sex;
-
-        //Birthday
-        $dob = $_POST['birthday'];
-        $_SESSION['birthday'] = $dob;
-
-
-        // Stores random picture user
-        $random_pic_user = rand(1,20);
-        $picture_user = "images/users/user-".$random_pic_user.".jpg";
-
-
-        // Encrypt password
-        if (empty($error_array)){
-
-            //Encrypt password before sending to database
-
-            $pass = md5($pass);
-
-            // Insert data to database
-
-            $query = mysqli_query($conn, "INSERT INTO users VALUES ('', '$fname', '$lname', '$email', '$pass', '$dob', '$date', '$sex', '$city', '$country', '$picture_user', '0' , '0', 'no', ',')");
-
-            // Clear session variable after register success
-            $_SESSION['fname'] = "";
-            $_SESSION['lname'] = "";
-            $_SESSION['email'] = "";
-            $_SESSION['city'] = "";
-            // Notify register sucessfully
-            array_push($error_array,"<span style='color: #4cae4c;'>You're all set! Go ahead and login!</span>");
-        }
-    }
 
 ?>
 <!DOCTYPE html>
@@ -164,13 +51,13 @@
                     <!-- Register/Login Tabs-->
                     <div class="reg-options">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#register" data-toggle="tab">Register</a></li>
-                            <li><a href="#login" data-toggle="tab">Login</a></li>
+                            <li class="active" ><a href="#register" data-toggle="tab">Register</a></li>
+                            <li ><a href="#login" data-toggle="tab">Login</a></li>
                         </ul><!--Tabs End-->
                     </div>
 
                     <!--Registration Form Contents-->
-                    <div class="tab-content">
+                    <div class="tab-content ">
                         <div class="tab-pane active" id="register">
                             <h3>Register Now !!!</h3>
                             <p class="text-muted">Be cool and join today. Meet millions</p>
@@ -541,29 +428,36 @@
                         </div><!--Registration Form Contents Ends-->
 
                         <!--Login-->
-                        <div class="tab-pane" id="login">
+                        <div class="tab-pane " id="login">
                             <h3>Login</h3>
                             <p class="text-muted">Log into your account</p>
 
                             <!--Login Form-->
-                            <form name="Login_form" id='Login_form'>
+                            <form action="index.php" name="Login_form" id='Login_form' method="POST">
                                 <div class="row">
                                     <div class="form-group col-xs-12">
                                         <label for="my-email" class="sr-only">Email</label>
                                         <input id="my-email" class="form-control input-group-lg" type="text"
-                                               name="Email" title="Enter Email" placeholder="Your Email"/>
+                                               name="log_email" title="Enter Email" placeholder="Your Email" required/>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-xs-12">
                                         <label for="my-password" class="sr-only">Password</label>
                                         <input id="my-password" class="form-control input-group-lg" type="password"
-                                               name="password" title="Enter password" placeholder="Password"/>
+                                               name="log_password" title="Enter password" placeholder="Password" required/>
                                     </div>
                                 </div>
+                                <b class="error" style="position: relative;left: 11px;top: 3px;transition: none 0s ease 0s; color: red">
+                                    <?php
+                                    if (in_array("Email or password was incorrect", $error_array))
+                                        echo "Email or password was incorrect";
+                                    ?>
+                                </b>
+                                <p><a href="#">Forgot Password?</a></p>
+                                <button type="submit" name="login" class="btn btn-primary">Login Now</button>
                             </form><!--Login Form Ends-->
-                            <p><a href="#">Forgot Password?</a></p>
-                            <button class="btn btn-primary">Login Now</button>
+
                         </div>
                     </div>
                 </div>

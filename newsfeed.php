@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	
-<!-- Mirrored from mythemestore.com/friend-finder/newsfeed.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2020 13:48:17 GMT -->
+<!-- Mirrored from mythemestore.com/friend-finder/newsfeed.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2020 13:48:17 GMT -->
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,7 +56,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
                   <ul class="dropdown-menu newsfeed-home">
-                    <li><a href="newsfeed.html">Newsfeed</a></li>
+                    <li><a href="newsfeed.php">Newsfeed</a></li>
                     <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
                     <li><a href="newsfeed-friends.html">My friends</a></li>
                     <li><a href="newsfeed-messages.html">Chatroom</a></li>
@@ -83,7 +83,7 @@
                 <ul class="dropdown-menu page-list">
                   <li><a href="index-2.html">Landing Page 1</a></li>
                   <li><a href="index-register.html">Landing Page 2</a></li>
-                  <li><a href="newsfeed.html">Newsfeed</a></li>
+                  <li><a href="newsfeed.php">Newsfeed</a></li>
                   <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
                   <li><a href="newsfeed-friends.html">My friends</a></li>
                   <li><a href="newsfeed-messages.html">Chatroom</a></li>
@@ -126,7 +126,7 @@
             	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
-              <li><i class="icon ion-ios-paper"></i><div><a href="newsfeed.html">My Newsfeed</a></div></li>
+              <li><i class="icon ion-ios-paper"></i><div><a href="newsfeed.php">My Newsfeed</a></div></li>
               <li><i class="icon ion-ios-people"></i><div><a href="newsfeed-people-nearby.html">People Nearby</a></div></li>
               <li><i class="icon ion-ios-people-outline"></i><div><a href="newsfeed-friends.html">Friends</a></div></li>
               <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.html">Messages</a></div></li>
@@ -514,5 +514,5 @@
     <script src="js/script.js"></script>
   </body>
 
-<!-- Mirrored from mythemestore.com/friend-finder/newsfeed.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2020 13:50:18 GMT -->
+<!-- Mirrored from mythemestore.com/friend-finder/newsfeed.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Jan 2020 13:50:18 GMT -->
 </html>
