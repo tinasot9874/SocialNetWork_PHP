@@ -1,3 +1,129 @@
+<?php
+
+    session_start();
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $conn = mysqli_connect("localhost", "root", "","social_network_db");
+    if (mysqli_connect_errno()){
+        echo "Failed to connect: " . mysqli_connect_errno();
+    }
+
+    // Declaring variable to prevent errors
+    $fname       = "";          // First name
+    $lname       = "";          // Last name
+    $email       = "";          // Email
+    $pass        = "";          // Password
+    $cfm_pass    = "";          // Confirm Password
+    $date        = "";          // Sign up date
+    $dob         = "";          // Day of birds
+    $sex         = "";          // Sex
+    $city        = "";          // City
+    $country     = "";          // Country
+    $picture_user= "";          // Picture User
+    $error_array = array();     // Holds error messages
+
+    if (isset($_POST['register'])){
+        //Registration form value
+
+        //First name
+        $fname = strip_tags($_POST['firstname']);                //Remove html tags
+        $fname = str_replace(" ", "", $fname);      //Remove blank spaces
+        $fname = ucfirst(strtolower($fname));                   //Uppercase first name
+        $_SESSION['fname'] = $fname; // Stores first name into session variable
+        if (strlen($fname) > 25 || strlen($fname) < 2){
+            array_push($error_array,"Your First name must be between 2 and 25 characters");
+        }
+
+
+        //Last name
+        $lname = strip_tags($_POST['lastname']);                 //Remove html tags
+        $lname = str_replace(" ", "", $lname);      //Remove blank spaces
+        $lname = ucfirst(strtolower($lname));                   //Uppercase first name
+        $_SESSION['lname'] = $lname;                            // Stores last name into session variable
+        if (strlen($lname) > 25 || strlen($lname) < 2){
+            array_push($error_array,"Your Last name must be between 2 and 25 characters") ;
+        }
+
+        //Email
+        $email = strip_tags($_POST['email']);                    //Remove html tags
+        $email = str_replace(" ","", $email);      //Remove blank spaces
+        $email = ucfirst(strtolower($email));                   //Uppercase first name
+        $_SESSION['email'] = $email;                            // Stores email into session variable
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+            $email_check = mysqli_query($conn, "SELECT email FROM users WHERE email ='$email'");
+
+            //Count the number of rows returned
+            $num_rows = mysqli_num_rows($email_check);
+            if ($num_rows > 0){
+                array_push($error_array,"Email already in use") ;
+            }
+
+        }else{
+            array_push($error_array,"Invalid Email! Please check again");
+        }
+
+        //Password
+        $pass = strip_tags($_POST['password']);                //Remove html tags
+        $cfm_pass = strip_tags($_POST['cfm_password']);        //Remove html tags
+
+        //Date
+        $date = date("Y-m-d"); // Get current date
+        $_SESSION['date'] = $date;                 // Stores date into session variable
+
+        if ($pass != $cfm_pass){
+            array_push($error_array,"Password don't match!");
+        }else{
+            if(preg_match('/[^A-Za-z0-9]/', $pass)){
+                array_push($error_array,"Your password can only contain characters and numbers");
+            }
+        }
+        if (strlen($pass) > 30 || strlen($pass) <5){
+
+            array_push($error_array,"Your password must be between 5 and 30 characters");
+        }
+
+        // City
+        $city  = strip_tags($_POST['city']);
+        $_SESSION['city'] = $city;
+
+        //Country
+        $country = $_POST['country'];
+        // Sex
+        $sex   = $_POST['sex'];
+        $_SESSION['sex'] = $sex;
+
+        //Birthday
+        $dob = $_POST['birthday'];
+        $_SESSION['birthday'] = $dob;
+
+
+        // Stores random picture user
+        $random_pic_user = rand(1,20);
+        $picture_user = "images/users/user-".$random_pic_user.".jpg";
+
+
+        // Encrypt password
+        if (empty($error_array)){
+
+            //Encrypt password before sending to database
+
+            $pass = md5($pass);
+
+            // Insert data to database
+
+            $query = mysqli_query($conn, "INSERT INTO users VALUES ('', '$fname', '$lname', '$email', '$pass', '$dob', '$date', '$sex', '$city', '$country', '$picture_user', '0' , '0', 'no', ',')");
+
+            // Clear session variable after register success
+            $_SESSION['fname'] = "";
+            $_SESSION['lname'] = "";
+            $_SESSION['email'] = "";
+            $_SESSION['city'] = "";
+            // Notify register sucessfully
+            array_push($error_array,"<span style='color: #4cae4c;'>You're all set! Go ahead and login!</span>");
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +132,7 @@
     <meta name="description" content="This is social network html5 template available in themeforest......"/>
     <meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page"/>
     <meta name="robots" content="index, follow"/>
-    <title>Friend Finder | A Complete Social Network Template</title>
+    <title>Friend Finder | A Complete Social Network  </title>
 
     <!-- Stylesheets
     ================================================= -->
@@ -23,99 +149,6 @@
 </head>
 <body>
 
-<!-- Header
-================================================= -->
-<header id="header-inverse">
-    <nav class="navbar navbar-default navbar-fixed-top menu">
-        <div class="container">
-
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index-register.html"><img src="images/logo.png" alt="logo"/></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right main-menu">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Home <span><img src="images/down-arrow.png" alt=""/></span></a>
-                        <ul class="dropdown-menu newsfeed-home">
-                            <li><a href="index.html">Landing Page 1</a></li>
-                            <li><a href="index-register.html">Landing Page 2</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt=""/></span></a>
-                        <ul class="dropdown-menu newsfeed-home">
-                            <li><a href="newsfeed.html">Newsfeed</a></li>
-                            <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                            <li><a href="newsfeed-friends.html">My friends</a></li>
-                            <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                            <li><a href="newsfeed-images.html">Images</a></li>
-                            <li><a href="newsfeed-videos.html">Videos</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Timeline <span><img src="images/down-arrow.png" alt=""/></span></a>
-                        <ul class="dropdown-menu login">
-                            <li><a href="timeline.html">Timeline</a></li>
-                            <li><a href="timeline-about.html">Timeline About</a></li>
-                            <li><a href="timeline-album.html">Timeline Album</a></li>
-                            <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                            <li><a href="edit-profile-basic.html">Edit: Basic Info</a></li>
-                            <li><a href="edit-profile-work-edu.html">Edit: Work</a></li>
-                            <li><a href="edit-profile-interests.html">Edit: Interests</a></li>
-                            <li><a href="edit-profile-settings.html">Account Settings</a></li>
-                            <li><a href="edit-profile-password.html">Change Password</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false">All Pages <span><img src="images/down-arrow.png"
-                                                                                           alt=""/></span></a>
-                        <ul class="dropdown-menu page-list">
-                            <li><a href="index.html">Landing Page 1</a></li>
-                            <li><a href="index-register.html">Landing Page 2</a></li>
-                            <li><a href="newsfeed.html">Newsfeed</a></li>
-                            <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                            <li><a href="newsfeed-friends.html">My friends</a></li>
-                            <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                            <li><a href="newsfeed-images.html">Images</a></li>
-                            <li><a href="newsfeed-videos.html">Videos</a></li>
-                            <li><a href="timeline.html">Timeline</a></li>
-                            <li><a href="timeline-about.html">Timeline About</a></li>
-                            <li><a href="timeline-album.html">Timeline Album</a></li>
-                            <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                            <li><a href="edit-profile-basic.html">Edit Profile</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="faq.html">FAQ Page</a></li>
-                            <li><a href="404.html">404 Not Found</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="contact.html">Contact</a></li>
-                </ul>
-                <form class="navbar-form navbar-right hidden-sm">
-                    <div class="form-group">
-                        <i class="icon ion-android-search"></i>
-                        <input type="text" class="form-control" placeholder="Search friends, photos, videos">
-                    </div>
-                </form>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
-    </nav>
-</header>
-<!--Header End-->
-
 <!-- Landing Page Contents
 ================================================= -->
 <div id="lp-register">
@@ -127,7 +160,7 @@
                     <p>Friend Finder is a social network template that can be used to connect people. The template
                         offers Landing pages, News Feed, Image/Video Feed, Chat Box, Timeline and lot more. <br/> <br/>Why
                         are you waiting for? Buy it now.</p>
-                    <button class="btn btn-primary">Learn More</button>
+                    <button class="btn btn-primary">Learn More </button>
                 </div>
             </div>
             <div class="col-sm-6 col-sm-offset-1">
@@ -148,132 +181,104 @@
                             <p class="text-muted">Be cool and join today. Meet millions</p>
 
                             <!--Register Form-->
-                            <form name="registration_form" id='registration_form' class="form-inline">
+                            <form action="index.php" name="registration_form" id='registration_form' class="form-inline" method="POST">
                                 <div class="row">
                                     <div class="form-group col-xs-6">
                                         <label for="firstname" class="sr-only">First Name</label>
                                         <input id="firstname" class="form-control input-group-lg" type="text"
-                                               name="firstname" title="Enter first name" placeholder="First name"/>
+                                               name="firstname" title="Enter first name" placeholder="First name" value="<?php if (isset($_SESSION['fname'])) echo $_SESSION['fname']; ?>" required/>
+                                        <b class="error" style="position: relative;left: 11px;top: 3px;transition: none 0s ease 0s;color: red;">
+                                            <?php
+                                                if (in_array("Your First name must be between 2 and 25 characters", $error_array))
+                                                    echo "Your First name must be between 2 and 25 characters";
+                                            ?>
+                                        </b>
                                     </div>
                                     <div class="form-group col-xs-6">
                                         <label for="lastname" class="sr-only">Last Name</label>
                                         <input id="lastname" class="form-control input-group-lg" type="text"
-                                               name="lastname" title="Enter last name" placeholder="Last name"/>
+                                               name="lastname" title="Enter last name" placeholder="Last name" value="<?php if (isset($_SESSION['lname'])) echo $_SESSION['lname']; ?>" required/>
+                                        <b class="error" style="position: relative;left: 11px;top: 3px;transition: none 0s ease 0s;color: red;">
+                                        <?php
+                                        if (in_array("Your Last name must be between 2 and 25 characters", $error_array))
+                                            echo "Your Last name must be between 2 and 25 characters";
+                                        ?>
+                                        </b>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-xs-12">
                                         <label for="email" class="sr-only">Email</label>
-                                        <input id="email" class="form-control input-group-lg" type="text" name="Email"
-                                               title="Enter Email" placeholder="Your Email"/>
+                                        <input id="email" class="form-control input-group-lg" type="email" name="email"
+                                               title="Enter Email" placeholder="Your Email" value="<?php if (isset($_SESSION['email'])) echo $_SESSION['email']; ?>" required/>
+                                        <b class="error" style="position: relative;left: 11px;top: 3px;transition: none 0s ease 0s;color: red;">
+                                        <?php
+                                        if (in_array("Email already in use", $error_array)){
+                                            echo "Email already in use";}
+                                        if (in_array("Invalid Email! Please check again", $error_array)){
+                                            echo "Invalid Email! Please check again";}
+                                        ?>
+                                        </b>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-xs-12">
                                         <label for="password" class="sr-only">Password</label>
                                         <input id="password" class="form-control input-group-lg" type="password"
-                                               name="password" title="Enter password" placeholder="Password"/>
+                                               name="password" title="Enter password" placeholder="Password" required/>
+                                        <b class="error" style="position: relative;left: 11px;top: 3px;transition: none 0s ease 0s;color: red;">
+                                        <?php
+                                        if (in_array("Your password can only contain characters and numbers", $error_array)){
+                                            echo "Your password can only contain characters and numbers";}
+                                        if (in_array("Your password must be between 5 and 30 characters", $error_array)){
+                                            echo "Your password must be between 5 and 30 characters";}
+                                        ?>
+                                        </b>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <p class="birth"><strong>Date of Birth</strong></p>
-                                    <div class="form-group col-sm-3 col-xs-6">
-                                        <label for="month" class="sr-only"></label>
-                                        <select class="form-control" id="day">
-                                            <option value="Day" disabled selected>Day</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                            <option>11</option>
-                                            <option>12</option>
-                                            <option>13</option>
-                                            <option>14</option>
-                                            <option>15</option>
-                                            <option>16</option>
-                                            <option>17</option>
-                                            <option>18</option>
-                                            <option>19</option>
-                                            <option>20</option>
-                                            <option>21</option>
-                                            <option>22</option>
-                                            <option>23</option>
-                                            <option>24</option>
-                                            <option>25</option>
-                                            <option>26</option>
-                                            <option>27</option>
-                                            <option>28</option>
-                                            <option>29</option>
-                                            <option>30</option>
-                                            <option>31</option>
-                                        </select>
+                                    <div class="form-group col-xs-12">
+                                        <label for="cfm_password" class="sr-only">Confirm Password</label>
+                                        <input id="cfm_password" class="form-control input-group-lg" type="password"
+                                               name="cfm_password" title="Enter password" placeholder="Confirm Password" required/>
+                                        <b class="error" style="position: relative;left: 11px;top: 3px;transition: none 0s ease 0s;color: red;">
+                                        <?php
+                                        if (in_array("Password don't match!", $error_array))
+                                            echo "Password don't match!";
+                                        ?>
+                                        </b>
                                     </div>
-                                    <div class="form-group col-sm-3 col-xs-6">
-                                        <label for="month" class="sr-only"></label>
-                                        <select class="form-control" id="month">
-                                            <option value="month" disabled selected>Month</option>
-                                            <option>Jan</option>
-                                            <option>Feb</option>
-                                            <option>Mar</option>
-                                            <option>Apr</option>
-                                            <option>May</option>
-                                            <option>Jun</option>
-                                            <option>Jul</option>
-                                            <option>Aug</option>
-                                            <option>Sep</option>
-                                            <option>Oct</option>
-                                            <option>Nov</option>
-                                            <option>Dec</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-sm-6 col-xs-12">
-                                        <label for="year" class="sr-only"></label>
-                                        <select class="form-control" id="year">
-                                            <option value="year" disabled selected>Year</option>
-                                            <option>2000</option>
-                                            <option>2001</option>
-                                            <option>2002</option>
-                                            <option>2004</option>
-                                            <option>2005</option>
-                                            <option>2006</option>
-                                            <option>2007</option>
-                                            <option>2008</option>
-                                            <option>2009</option>
-                                            <option>2010</option>
-                                            <option>2011</option>
-                                            <option>2012</option>
-                                        </select>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-xs-12">
+                                        <label for="birthday" class="sr-only">Birthday</label>
+                                        <input id="birthday" class="form-control input-group-lg" type="date"
+                                               name="birthday" title="Enter your birthday"/>
                                     </div>
                                 </div>
                                 <div class="form-group gender">
                                     <label class="radio-inline">
-                                        <input type="radio" name="optradio" checked>Male
+                                        <input type="radio" name="sex" value="male" checked>Male
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="optradio">Female
+                                        <input type="radio" name="sex" value="female">Female
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="optradio">Optional
+                                        <input type="radio" name="sex" value="Optional">Optional
                                     </label>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-xs-6">
                                         <label for="city" class="sr-only">City</label>
                                         <input id="city" class="form-control input-group-lg reg_name" type="text"
-                                               name="city" title="Enter city" placeholder="Your city"/>
+                                               name="city" title="Enter city" placeholder="Your city" value="<?php if (isset($_SESSION['city'])) echo $_SESSION['city']; ?>"/>
                                     </div>
                                     <div class="form-group col-xs-6">
                                         <label for="country" class="sr-only"></label>
-                                        <select class="form-control" id="country">
+                                        <select name="country" class="form-control" id="country">
                                             <option value="country" disabled selected>Country</option>
                                             <option value="AFG">Afghanistan</option>
-                                            <option value="ALA">�land Islands</option>
+                                            <option value="ALA">Aland Islands</option>
                                             <option value="ALB">Albania</option>
                                             <option value="DZA">Algeria</option>
                                             <option value="ASM">American Samoa</option>
@@ -524,9 +529,20 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="row" style="float: right;">
+                                <p><a href="#login" data-toggle="tab" aria-expanded="true">Already have an account?</a></p>
+                                <button type="submit" name="register" class="btn btn-primary">Register Now</button>
+                                </div>
+                                <div class="row">
+                                    <b class="error" style="position: relative;left: 11px;top: 3px;transition: none 0s ease 0s;">
+                                        <?php
+                                        if (in_array("<span style='color: #4cae4c;'>You're all set! Go ahead and login!</span>", $error_array))
+                                            echo "<span style='color: #4cae4c;'>You're all set! Go ahead and login!</span>";
+                                        ?>
+                                    </b>
+                                </div>
                             </form><!--Register Now Form Ends-->
-                            <p><a href="#">Already have an account?</a></p>
-                            <button class="btn btn-primary">Register Now</button>
+
                         </div><!--Registration Form Contents Ends-->
 
                         <!--Login-->
@@ -579,9 +595,6 @@
     <div class="spinner"></div>
 </div>
 
-<!--Buy button-->
-<a href="https://themeforest.net/cart/add_items?item_ids=18711273&ref=thunder-team" target="_blank" class="btn btn-buy"><span
-        class="italy">Buy with:</span><img src="images/envato_logo.png" alt=""/><span class="price">Only $20!</span></a>
 
 <!-- Scripts
 ================================================= -->
