@@ -1,11 +1,6 @@
 <?php
 
-    session_start();
-    date_default_timezone_set('Asia/Ho_Chi_Minh');
-    $conn = mysqli_connect("localhost", "root", "","social_network_db");
-    if (mysqli_connect_errno()){
-        echo "Failed to connect: " . mysqli_connect_errno();
-    }
+    require_once ('includes/config.php');
 
     // Declaring variable to prevent errors
     $fname       = "";          // First name
