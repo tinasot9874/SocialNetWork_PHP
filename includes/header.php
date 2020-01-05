@@ -93,22 +93,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
                         <ul class="dropdown-menu page-list">
-                            <li><a href="index-2.html">Landing Page 1</a></li>
-                            <li><a href="index-register.html">Landing Page 2</a></li>
-                            <li><a href="newsfeed.php">Newsfeed</a></li>
-                            <li><a href="newsfeed-people-nearby.html">Poeple Nearly</a></li>
-                            <li><a href="newsfeed-friends.html">My friends</a></li>
-                            <li><a href="newsfeed-messages.html">Chatroom</a></li>
-                            <li><a href="newsfeed-images.html">Images</a></li>
-                            <li><a href="newsfeed-videos.html">Videos</a></li>
-                            <li><a href="timeline.html">Timeline</a></li>
-                            <li><a href="timeline-about.html">Timeline About</a></li>
-                            <li><a href="timeline-album.html">Timeline Album</a></li>
-                            <li><a href="timeline-friends.html">Timeline Friends</a></li>
-                            <li><a href="edit-profile-basic.html">Edit Profile</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="faq.html">FAQ Page</a></li>
-                            <li><a href="404.html">404 Not Found</a></li>
+                            <li><a href="logout.php">Landing Page 1</a></li>
+
                         </ul>
                     </li>
                     <li class="dropdown"><a href="contact.html">Contact</a></li>

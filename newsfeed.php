@@ -34,7 +34,7 @@
               </ul>
             </div><!--chat block ends-->
           </div>
-    			<div class="col-md-7">
+                <div class="col-md-7">
 
             <!-- Post Create Box
             ================================================= -->
