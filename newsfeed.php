@@ -1,4 +1,7 @@
-<?php include('includes/header.php');?>
+<?php
+include("includes/header.php");
+include ("includes/classes/User.php");
+?>
     <div id="page-contents">
     	<div class="container">
     		<div class="row">
@@ -8,7 +11,10 @@
     			<div class="col-md-3 static">
             <div class="profile-card">
             	<img src="<?php echo $user['profile_pic']; ?>" alt="user" class="profile-photo" />
-            	<h5><a href="<?php echo $userLoggedIn; ?>" class="text-white"><?php echo $user['firstname'] . " " . $user['lastname']; ?></a></h5>
+            	<h5><a href="<?php /*echo $userLoggedIn;*/ ?>" class="text-white">
+                        <?php $user_obj = new User($conn, $userLoggedIn);
+                            echo $user_obj->getFirstAndLastName();
+                        ?></a></h5>
             	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
