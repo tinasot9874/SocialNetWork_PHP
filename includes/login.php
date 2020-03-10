@@ -17,7 +17,7 @@ if (isset($_POST['login'])){
             $reopen_account = mysqli_query($conn,"UPDATE users SET user_closed = 'no' WHERE email ='$email'");
         }
         $_SESSION['username'] = $username;
-        header("Location: newsfeed.php");
+        header("Location: homepage.php");
     }else{
         array_push($error_array, "Email or password was incorrect");
     }

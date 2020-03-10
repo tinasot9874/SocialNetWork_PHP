@@ -24,7 +24,7 @@ if (isset($_POST['publish_post'])){
                 </div><!--profile card ends-->
                 <ul class="nav-news-feed">
                     <li><i class="icon ion-ios-paper"></i>
-                        <div><a href="newsfeed.php">My Newsfeed</a></div>
+                        <div><a href="homepage.php">My Newsfeed</a></div>
                     </li>
                     <li><i class="icon ion-ios-people"></i>
                         <div><a href="newsfeed-people-nearby.html">People Nearby</a></div>
@@ -88,7 +88,7 @@ if (isset($_POST['publish_post'])){
 
                 <!-- ========================Post Create Box========================= -->
 
-                <form action="newsfeed.php" method="post">
+                <form action="homepage.php" method="post">
                     <div class="create-post">
                         <div class="row">
                             <div class="col-md-7 col-sm-7">

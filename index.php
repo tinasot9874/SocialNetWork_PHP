@@ -131,24 +131,24 @@
                                         </b>
                                     </div>
                                 </div>
-<!--                                <div class="row">-->
-<!--                                    <div class="form-group col-xs-12">-->
-<!--                                        <label for="birthday" class="sr-only">Birthday</label>-->
-<!--                                        <input id="birthday" class="form-control input-group-lg" type="date"-->
-<!--                                               name="birthday" title="Enter your birthday"/>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="form-group gender">-->
-<!--                                    <label class="radio-inline">-->
-<!--                                        <input type="radio" name="sex" value="male" checked>Male-->
-<!--                                    </label>-->
-<!--                                    <label class="radio-inline">-->
-<!--                                        <input type="radio" name="sex" value="female">Female-->
-<!--                                    </label>-->
-<!--                                    <label class="radio-inline">-->
-<!--                                        <input type="radio" name="sex" value="Optional">Optional-->
-<!--                                    </label>-->
-<!--                                </div>-->
+                                <div class="row">
+                                    <div class="form-group col-xs-12">
+                                        <label for="birthday" class="sr-only">Birthday</label>
+                                        <input id="birthday" class="form-control input-group-lg" type="date"
+                                               name="birthday" title="Enter your birthday"/>
+                                    </div>
+                                </div>
+                                <div class="form-group gender">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" value="male" checked>Male
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" value="female">Female
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" value="Optional">Optional
+                                    </label>
+                                </div>
 <!--                                <div class="row">-->
 <!--                                    <div class="form-group col-xs-6">-->
 <!--                                        <label for="city" class="sr-only">City</label>-->

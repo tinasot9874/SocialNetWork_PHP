@@ -63,11 +63,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right main-menu">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span><img src="images/down-arrow.png" alt="" /></span></a>
-                        <ul class="dropdown-menu newsfeed-home">
-                            <li><a href="index-2.html">Landing Page 1</a></li>
-                            <li><a href="index-register.html">Landing Page 2</a></li>
-                        </ul>
+                        <a href="homepage.php">Home</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Newsfeed <span><img src="images/down-arrow.png" alt="" /></span></a>
@@ -101,7 +97,6 @@
 
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="contact.html">Contact</a></li>
                 </ul>
                 <form class="navbar-form navbar-right hidden-sm">
                     <div class="form-group">
