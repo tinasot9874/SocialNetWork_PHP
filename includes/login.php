@@ -10,7 +10,7 @@ if (isset($_POST['login'])){
     $check_login_query = mysqli_num_rows($check_database_query);
     if ($check_login_query == 1){
         $row = mysqli_fetch_array($check_database_query);
-        $username = $row['username'];
+        $username = $row['username']; // To checked user had login yet ? If not return login page
 
         $user_closed_query = mysqli_query($conn, "SELECT * FROM users WHERE email ='$email' AND user_closed='yes'");
         if(mysqli_num_rows($user_closed_query) == 1){

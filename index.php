@@ -51,8 +51,8 @@
                     <!-- Register/Login Tabs-->
                     <div class="reg-options">
                         <ul class="nav nav-tabs">
-                            <li class="active" ><a href="#register" data-toggle="tab">Register</a></li>
-                            <li ><a href="#login" data-toggle="tab">Login</a></li>
+                            <li id="register_active" class="active" ><a href="#register" data-toggle="tab">Register</a></li>
+                            <li id="login_active"><a href="#login" data-toggle="tab">Login</a></li>
                         </ul><!--Tabs End-->
                     </div>
 
@@ -412,7 +412,7 @@
 <!--                                    </div>-->
 <!--                                </div>-->
                                 <div class="row" style="float: right;">
-                                <p><a href="#login" data-toggle="tab" aria-expanded="true">Already have an account?</a></p>
+                                <p class="trigger_loginform"><a href="#login" data-toggle="tab" aria-expanded="true">Already have an account?</a></p>
                                 <button type="submit" name="register" class="btn btn-primary">Register Now</button>
                                 </div>
                                 <div class="row">
@@ -492,7 +492,14 @@
 <script src="js/jquery.appear.min.js"></script>
 <script src="js/jquery.incremental-counter.js"></script>
 <script src="js/script.js"></script>
-
+<script> // Add class active for login
+    $(document).ready(function () {
+        $('.trigger_loginform').click(function () {
+            $('#login_active').addClass("active");
+            $('#register_active').removeClass("active");
+        });
+    });
+</script>
 
 </body>
 </html>

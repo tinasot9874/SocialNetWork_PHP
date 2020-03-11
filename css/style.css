@@ -976,6 +976,10 @@ textarea{
   border: 1px solid #f1f2f2;
   padding-left: 15px;
 }
+#registration_form .form-control:hover, #Login_form .form-control:hover {
+    border: 1px solid #00aae6;
+}
+
 
 #registration_form select.form-control{
   background: rgba(0, 0, 0, 0) url("../images/down-arrow.png") no-repeat scroll calc(100% - 10px) center / 8px auto;
