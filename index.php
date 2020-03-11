@@ -441,7 +441,7 @@
                                 <div class="row">
                                     <div class="form-group col-xs-12">
                                         <label for="my-email" class="sr-only">Email</label>
-                                        <input id="my-email" class="form-control input-group-lg" type="text"
+                                        <input id="my-email" class="form-control input-group-lg" type="email"
                                                name="log_email" title="Enter Email" placeholder="Your Email" required/>
                                     </div>
                                 </div>
@@ -519,12 +519,10 @@ if(isset($_POST['login'])) {
             $("#login").addClass("active");
             $("#login_active").addClass("active");
             $("#register").removeClass("active");
-            $("#register_active").removeClass("active");
-            
-        });
-         
+            $("#register_active").removeClass("active");      
+        });    
         </script>
-        ';
+    ';
 }
 ?>
 </body>

@@ -19,7 +19,7 @@ if (isset($_POST['publish_post'])){
                     <h5><a href="<?php /*echo $userLoggedIn;*/ ?>" class="text-white">
                             <?php $user_obj = new User($conn, $userLoggedIn);
                             echo $user_obj->getFirstAndLastName();
-                            ?></a></h5>
+                            ?></a><i class="fas fa-user-cog"></i></h5>
                     <a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
                 </div><!--profile card ends-->
                 <ul class="nav-news-feed">
