@@ -33,6 +33,7 @@
 
 <!-- Landing Page Contents
 ================================================= -->
+
 <div id="lp-register">
     <div class="container wrapper">
         <div class="row">
@@ -57,12 +58,15 @@
                     </div>
 
                     <!--Registration Form Contents-->
+
+
                     <div class="tab-content ">
+                        <!--Register Form-->
                         <div class="tab-pane active" id="register">
                             <h3>Register Now !!!</h3>
                             <p class="text-muted">Be cool and join today. Meet millions</p>
 
-                            <!--Register Form-->
+
                             <form action="index.php" name="registration_form" id='registration_form' class="form-inline" method="POST">
                                 <div class="row">
                                     <div class="form-group col-xs-6">
@@ -455,7 +459,7 @@
                                     ?>
                                 </b>
                                 <p><a href="#">Forgot Password?</a></p>
-                                <button type="submit" name="login" class="btn btn-primary">Login Now</button>
+                                <button id="login_button" type="submit" name="login" class="btn btn-primary">Login Now</button>
                             </form><!--Login Form Ends-->
 
                         </div>
@@ -479,6 +483,11 @@
     </div>
 </div>
 
+
+
+
+
+
 <!--preloader-->
 <div id="spinner-wrapper">
     <div class="spinner"></div>
@@ -499,7 +508,24 @@
             $('#register_active').removeClass("active");
         });
     });
-</script>
 
+</script>
+<?php
+if(isset($_POST['login'])) {
+    echo '
+        <script>
+         $(document).ready(function () {
+            console.log("asdadads");
+            $("#login").addClass("active");
+            $("#login_active").addClass("active");
+            $("#register").removeClass("active");
+            $("#register_active").removeClass("active");
+            
+        });
+         
+        </script>
+        ';
+}
+?>
 </body>
 </html>
