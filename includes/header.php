@@ -91,7 +91,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span><img src="images/down-arrow.png" alt="" /></span></a>
+                        <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon ion-android-settings"></i> &nbsp; <span><img src="images/down-arrow.png" alt="" /></span></a>
                         <ul class="dropdown-menu page-list">
                             <li><a href="includes/logout.php">Logout</a></li>
 
