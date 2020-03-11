@@ -114,8 +114,11 @@ if (isset($_POST['publish_post'])){
                 </form>
                 <!-- Post Create Box End-->
 
-                <!-- Post Content
-                ================================================= -->
+                <!-- Post Content ================================================= -->
+                <?php
+                    $post = new Post($conn, $userLoggedIn);
+                    $post->loadPostsFriends();
+                ?>
                 <div class="post-content">
                     <img src="images/post-images/1.jpg" alt="post-image" class="img-responsive post-image"/>
                     <div class="post-container">
