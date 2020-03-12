@@ -130,7 +130,7 @@ class Post{
                 }
             }
 
-            // Posting content
+            // Code handle posting content
 
             $str .= "<div class='post-content'>
                          <div class='post-container'>
@@ -143,10 +143,7 @@ class Post{
                                     </h5>
                                     
                                 </div>
-                                <div class='reaction'>
-                                    <a class='btn text-green'><i class='icon ion-thumbsup'></i> 13</a>
-                                    <a class='btn text-red'><i class='fa fa-thumbs-down'></i> 0</a>
-                                </div>
+                                
                                 <div class='line-divider'></div>
                                 <div class='post-text'>
                                     <p>
@@ -156,6 +153,10 @@ class Post{
                                     <i class='em em-anguished'></i>
                                     <i class='em em-anguished'></i>
                                     </p>
+                                </div>
+                                <div class='reaction'>
+                                    <a class='btn text-green'><i class='icon ion-thumbsup'></i> 13</a>
+                                    <a class='btn text-red'><i class='fa fa-thumbs-down'></i> 0</a>
                                 </div>
                                 <div class='line-divider'></div>
                                 <div class='post-comment'>
