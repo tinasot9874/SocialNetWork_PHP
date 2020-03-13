@@ -104,7 +104,7 @@ if (isset($_POST['publish_post'])){
             var page = $('.post-content').find('.nextPage').val();
             var noMorePosts = $('.post-content').find('.noMorePosts').val();
 
-            if (($(window).scrollTop() + $(window).height() > $(document).height() - 100) && noMorePosts == 'false') {
+            if (($(window).scrollTop() + $(window).height() > $(document).height() - 10) && noMorePosts == 'false') {
                 $('#loading').show();
 
                 var ajaxReq = $.ajax({
