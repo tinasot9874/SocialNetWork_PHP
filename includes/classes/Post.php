@@ -43,6 +43,7 @@ class Post{
     public function loadPostsFriends($data, $limit) {
 
         $page = $data['page'];
+
         $userLoggedIn = $this->user_obj->getUsername();
         if ($page == 1){
             $start = 0;
@@ -88,12 +89,7 @@ class Post{
                     continue;
                 }
 
-                //Once 10 post have been loaded, break
-                if ($count > $limit){
-                    break;
-                }else{
-                    $count++;
-                }
+
 
                 $user_details_query = mysqli_query($this->conn, "SELECT firstname, lastname, profile_pic FROM users WHERE username='$added_by'");
                 $user_row = mysqli_fetch_array($user_details_query);
@@ -151,10 +147,15 @@ class Post{
                         $time_message = $interval->s . " seconds ago";
                     }
                 }
-
+                //Once 10 post have been loaded, break
+                if ($count > $limit){
+                    break;
+                }else{
+                    $count++;
+                }
                 // Code handle posting content
 
-                $str .= "<div class='post-content'>
+                $str .= "
                          <div class='post-container'>
                             <img src='$profile_pic' alt='user' class='profile-photo-md pull-left'/>
                             <div class='post-detail'>
@@ -179,13 +180,19 @@ class Post{
                                 <div class='line-divider'></div>
                             </div>
                         </div>
-                     </div>";
-            }
-            if($count > $limit)
+                     
+                     <hr>";
+
+            } // end while loop
+            if($count > $limit){
                 $str .= "<input type='hidden' class='nextPage' value='" . ($page + 1) . "'>
 							<input type='hidden' class='noMorePosts' value='false'>";
-            else
+            }
+            else{
                 $str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: center;'> No more posts to show! </p>";
+                
+            }
+
         } // end if
         echo $str;
     }

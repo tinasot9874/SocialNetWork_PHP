@@ -99,14 +99,12 @@ if (isset($_POST['publish_post'])){
 
 
         $(window).scroll(function () {
-
             var height = $('.post-content').height();  // Div containing posts
             var scroll_top = $(this).scrollTop();
             var page = $('.post-content').find('.nextPage').val();
             var noMorePosts = $('.post-content').find('.noMorePosts').val();
 
-            if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
-                alert("ádsadas");
+            if (($(window).scrollTop() + $(window).height() > $(document).height() - 100) && noMorePosts == 'false') {
                 $('#loading').show();
 
                 var ajaxReq = $.ajax({
@@ -115,16 +113,18 @@ if (isset($_POST['publish_post'])){
                                         data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
                                         cache:false,
 
-                                        success: function (response) {
-                                            $('.post-content').find('.nextPage').remove(); // Remove current .nextPage
-                                            $('.post-content').find('.noMorePosts').remove(); // Remove current .noMorePosts
+                                        success: function(response) {
+                                            $('.post-content').find('.nextPage').remove(); //Removes current .nextpage
+                                            $('.post-content').find('.noMorePosts').remove(); //Removes current .nextpage
 
-                                            $('#loading').hide();   // hide icon loading.gif when loading success
+                                            $('#loading').hide();
                                             $('.post-content').append(response);
                                         }
                                      });
             } // end if
-            return false;
+            else {
+                return false;
+            }
         });  // end   $(window).scroll(function ())
     });
 </script>
